@@ -1,0 +1,22 @@
+#
+# Hide behind the scenes Eclipse files/folders
+#
+/.classpath
+/.project
+/.settings
+
+#
+# Also hide NetBeans stuff should a fork use it
+#
+/nbproject
+
+#
+# No build files, since Maven handles that
+#
+/build.xml
+
+#
+# Also don't want Maven's target folder. The plugin JAR should be
+# distributed through other means (i.e. BukkitDev, etc.)
+#
+/target

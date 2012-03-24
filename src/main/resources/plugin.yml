@@ -1,0 +1,6 @@
+name: ${name}
+main: ${bukkit.package}.${project.artifactId}
+version: ${version}
+author: ${bukkit.author}
+website: ${url}
+description: ${description}
