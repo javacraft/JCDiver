@@ -4,3 +4,19 @@ version: ${version}
 author: ${bukkit.author}
 website: ${url}
 description: ${description}
+
+permissions:
+  jcdiver.*:
+    description: Enable all JCDiver features
+    default: op
+    children:
+      jcdiver.enabled: true
+      jcdiver.unlimited: true
+  
+  jcdiver.enabled:
+    description: Enable basic KaDiving with gold helmet and sugarcane
+    default: false
+  
+  jcdiver.unlimited:
+    description: Enable unlimited breathing with full gold armor.
+    default: false
