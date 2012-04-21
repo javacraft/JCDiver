@@ -13,9 +13,6 @@ public class JCDiver extends JavaPlugin {
 	private Logger					logger;
 	private PluginDescriptionFile	pdFile;
 	private String					logPrefix;
-	public final static short		DAMAGE			= 1;
-	public final static String		PERM_ENABLED	= "jcdiver.enabled";
-	public final static String		PERM_UNLIMITED	= "jcdiver.unlimited";
 
 	public Map<Player, Boolean>		breathers		= new HashMap<Player, Boolean>();
 

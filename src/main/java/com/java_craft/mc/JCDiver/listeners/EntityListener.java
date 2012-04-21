@@ -10,10 +10,10 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
-import com.java_craft.mc.JCDiver.JCDiver;
+import com.java_craft.mc.JCDiver.*;
 
 
-public class EntityListener implements Listener {
+public class EntityListener implements Listener, IDiverConstants {
 	private JCDiver	plugin;
 
 
@@ -35,7 +35,7 @@ public class EntityListener implements Listener {
 		Player player = (Player) entity;
 
 		// If player does not have basic permission, return
-		if ( !player.hasPermission( JCDiver.PERM_ENABLED ) )
+		if ( !player.hasPermission( P_ENABLED ) )
 			return;
 
 		PlayerInventory inventory = player.getInventory();
@@ -56,7 +56,7 @@ public class EntityListener implements Listener {
 
 		// If player has full armor and permission to use, cancel damage. Otherwise tick damage
 		// with helmet only, if equipped.
-		if ( player.hasPermission( JCDiver.PERM_UNLIMITED ) && hasGoldHelmet && hasGoldChestplate
+		if ( player.hasPermission( P_UNLIMITED ) && hasGoldHelmet && hasGoldChestplate
 				&& hasGoldLeggings && hasGoldBoots ) {
 			event.setCancelled( true );
 		}
@@ -109,7 +109,7 @@ public class EntityListener implements Listener {
 					player.sendMessage( ChatColor.RED + "YOU ARE NOW GOING TO DROWN !!!!" );
 				}
 
-				Integer tmpInt = durability + JCDiver.DAMAGE;
+				Integer tmpInt = durability + C_DAMAGE;
 				short newDamage = tmpInt.shortValue();
 				player.getInventory().getHelmet().setDurability( newDamage );
 				if ( newDamage >= 69 ) {
