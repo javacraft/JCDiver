@@ -10,18 +10,12 @@
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>bukkit</artifactId>
-			<version>1.2.3-R0.3-SNAPSHOT</version>
+			<version>1.2.5-R4.0</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 	<url>http://www.java-craft.com</url>
 	<build>
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>true</filtering>
-			</resource>
-		</resources>
 		<plugins>
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -45,6 +39,10 @@
 	</build>
 	<properties>
 		<bukkit.package>com.java_craft.mc.JCDiver</bukkit.package>
-		<bukkit.author>frelling</bukkit.author>
 	</properties>
+	<parent>
+		<groupId>com.java-craft</groupId>
+		<artifactId>JavacraftPOM</artifactId>
+		<version>v1.0-SNAPSHOT</version>
+	</parent>
 </project>
