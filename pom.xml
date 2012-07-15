@@ -6,7 +6,62 @@
 	<version>1.0</version>
 	<name>JCDiver</name>
 	<description>A simple plugin that gives players extended underwater breathing</description>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<filtering>true</filtering>
+			</testResource>
+		</testResources>
+		<plugins>
+			<!-- Force all build to JavaSE-1.6, rather than default 1.5 -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<organization>
+		<name>Javacraft</name>
+		<url>http://www.java-craft.com</url>
+	</organization>
+	<developers>
+		<developer>
+			<id>frelling</id>
+			<name>frelling</name>
+			<email>frelling@java-craft.com</email>
+			<url>http://www.java-craft.com</url>
+			<organization>Javacraft</organization>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>-5</timezone>
+		</developer>
+	</developers>
+	<properties>
+		<bukkit.package>com.java_craft.mc.JCDiver</bukkit.package>
+		<bukkit.author>frelling</bukkit.author>
+		<bukkit.softdepend>[]</bukkit.softdepend>
+		<bukkit.depend>[]</bukkit.depend>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.9</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>bukkit</artifactId>
@@ -15,34 +70,4 @@
 		</dependency>
 	</dependencies>
 	<url>http://www.java-craft.com</url>
-	<build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>create-myjar</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-						<configuration>
-							<descriptorRefs>
-								<descriptorRef>jar-with-dependencies</descriptorRef>
-							</descriptorRefs>
-							<appendAssemblyId>false</appendAssemblyId>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
-	<properties>
-		<bukkit.package>com.java_craft.mc.JCDiver</bukkit.package>
-	</properties>
-	<parent>
-		<groupId>com.java-craft</groupId>
-		<artifactId>JavacraftPOM</artifactId>
-		<version>v1.0-SNAPSHOT</version>
-	</parent>
 </project>
